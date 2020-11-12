@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"></meta>
+  <title> Home | Chris Photography </title>
+  <link href="components/all.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="graphics/images/icon.png">
+  <link href="components/index.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <link rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body>
+  <div id="arrow" style="display: none;background-color: black; opacity:0.7;z-index: 100;width:100%; height:100%;position: fixed;"></div>
+<header>
+
+  <div id="account" class="blockSign">
+    <div id="formContent">
+        <ul class="tab-group">
+            <li class="tab active"><a href="#signin">Sign In</a></li>
+            <li class="tab"><a href="#signup">Sign Up</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="signin">
+                <h1>Welcome </h1>
+                <form onsubmit="return false;">
+                    <input id="userA" type="text" required autocomplete="off" placeholder="Username or Email Address" id="signin"
+                        class="fadeIn " />
+                    <input id="pwdA" type="password" required autocomplete="off" placeholder="Password" id="password"
+                        class="fadeIn ">
+                    <input onclick="check()" type="submit" value="Sign In"></input>
+                    <p id="formFooter"><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div id="signup">
+                    <h1>Sign up Now </h1>
+                <form onsubmit="return false;">
+                    <input maxlength="15" id="first" type="text" required autocomplete="off" placeholder="Username" />
+                    <input maxlength="34" id="email" type="email" required autocomplete="off" placeholder="Email Address" />
+                    <input maxlength="15" id="pwd" type="password" required autocomplete="off" placeholder="Password" />
+                    <input onclick="create()" type="submit" value="Sign Up"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center"><button onclick="closeIt()" style="color: white;text-align: center;">CLOSE</button></p>
+</div>
+
+
+  <nav>
+   <!-- <button ><i class="fa fa-unlock-alt" style="color: white; position: absolute; top:17px; right:10px;font-size:25px;" aria-hidden="true"></i></button>-->
+   <button onclick="display()" id="acct" class="user unlock"></button>
+   <!--<button onclick="signIn()">Sign In</button><br><button>Sign Out</button>-->
+  <object id="dropdown">
+    <div id="unlocked">Guest<hr></hr><button onclick="signIn()">Sign Up/In</button></div>
+    <div id="locked"><button onclick="viewAcct()">Account</button><hr></hr><button onclick="signOut()">Sign Out</button></div>
+  </object>
+   <h2><a href="" id="logo">Chris 📸</a></h2>
+    <button class="nav-button fa fa-bars"></button>
+    <div>
+<!--     <ul> -->
+      <ul>
+        <button class="exit-menu fa fa-times"></button>
+        <li><a id="navContentA" href="" class="active"></a></li>
+        <li><a id="navContentB" href="portfolio"></a></li>
+        <li><a id="navContentC" href="reserve"></a></li>
+        <li><a id="navContentD" href="pricing"></a></li>
+        <li><a id="navContentE" href="contact"></a></li>
+        
+      </ul>
+<!--     </ul> -->
+    </div>
+  </nav>
+  <div class="inheader">
+    <div class="headertext">
+      <h1>Chris Photography</h1>
+    </div>
+    <img class="galleryimg" src='/files/graphics/gallery.png'>
+	 <img class="galleryimg" src='/files/graphics/ss.gif'>
+  </div>
+  <!--
+  <div id="object" class="center">
+    <h1 class="alex-brush">Chris</h1>
+    <h2 id="termPhotography"></h2>
+    <span id="asterisk">*</span>
+    <p id="keyWords"></p>
+  </div>
+  -->
+  <!--We were gonna remove the anim $(this).removeClass("run-animation").addClass("run-animation");-->
+</header>
+
+<section class="add-padding add-flex">
+  <div class="center-text">
+    <h1 class="alex-brush"><span class="custom-font">Discover</span><br />MY STORY</h1>
+    <h2>*</h2>
+    <p>Hi! I'm Chris Edwards, a famous photographer...</p>
+  </div>
+  <div  class="stuffed-cherries" data-aos="fade-left" data-aos-delay="300">
+  </div>
+</section>
+
+<section class="bread-background center-h1">
+ <!--Place video of Tennis over here-->
+  <h1 class="custom-h1 alex-brush"><span class="custom-font">Video</span><br />here</h1>
+</section>
+
+<section class="menu add-flex add-padding">
+  <div class="menu-images">
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/FlowerPhotography/FlowerPhotography_2.jpg"  data-aos="fade-down" data-aos-delay="300"/>
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/OtherPhotography/OtherPhotography_16.jpg" data-aos="fade-right" data-aos-delay="300"/>
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/CulturalPhotography/CulturalPhotography_2.jpg" data-aos="fade-left" data-aos-delay="300"/>
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/PetsPhotography/PetsPhotography_1.jpg" style="padding-top:3.3%" data-aos="fade-up" data-aos-delay="300"/>
+  </div>
+  <div class="center-text">
+    <h1><span class="custom-font alex-brush">Explore</span><br />Portfolio</h1>
+    <h2>*</h2>
+    <p>Info abt Portfolio characteristics</p>
+    <a href="#">Portfolio</a>
+  </div>
+</section>
+
+<section class="cake-background center-h1">
+  <h1 class="custom-h1"><span class="custom-font alex-brush">Video</span><br />here</h1>
+</section>
+
+<section class="add-flex reservation-section">
+  <div class="center-text add-padding">
+    <h1><span class="custom-font alex-brush">Adventure</span><br />Interested?</h1>
+    <h2>*</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim animi odit in dignissimos neque ratione, laboriosam rerum! Deleniti accusamus non, aliquam tempora, mollitia laborum ad, fugiat at explicabo esse aut. Lorem ipsum dolor sit amet, adipisicing elit.</p>
+    <a href="#">Reserve a spot</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="#">Package Pricing</a>
+  </div>
+  <div>
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/TennisPhotography/TennisPhotography_5.jpg" data-aos="fade-up" data-aos-delay="300"/>
+    <img src="https://eagleeyephotography.roydero.com/graphics/images/Photography/CulturalPhotography/CulturalPhotography_3.jpg" data-aos="fade-down" data-aos-delay="300"/>
+  </div>
+</section>
+
+<footer>
+  <button class="to-top"><i class="fa fa-chevron-up"></i>TOP</button>
+  
+  <div class="restaurant-info">
+  
+    <div class="locations">
+      <h4>ADDRESS</h4>
+      <div class="location-1">
+        <h5>315 Van Brun St<br />Brooklyn, NY &#8212; 11231</h5>
+      </div><!--location-1-->
+      <div class="location-2">
+        <h5>25 Union Square West<br />New York, NY &#8212; 10003</h5>
+      </div>
+    </div><!--locations end-->
+
+    <div class="hours">
+      <h4>CONTACT</h4>
+      <div class="weekdays">
+        <h5>Monday - Thursday<br />
+          5:30pm - 10:00pm
+        </h5>
+      </div><!--weekdays end-->
+      
+      <div class="weekends">
+        <h5>Friday & Saturday<br />
+          5:30pm - 11:00pm
+        </h5>
+      </div><!--weekends end-->
+      
+      <div class="private-events">
+        <h5>Available for private<br />
+          events on Sunday
+        </h5>
+      </div>
+      
+    </div><!--hours end-->
+    
+  </div><!--restaurant-info end-->
+  
+  <div class="copyright">
+    <p><small>Copyright 2020 &#169; Handcrafted with love by <span>SFHS Website Design</span> Team</small></p>
+    <p><small>Permissions and Copyright &#8226; Contact The Team</small></p>
+  </div>
+</footer>
+
+<script src="/components/script.js"></script>
+</body>
+</html>

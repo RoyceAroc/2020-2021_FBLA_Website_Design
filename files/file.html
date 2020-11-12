@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Website</h1>
+<h2> Sign In </h2>
+Email or Username:
+<input id="usr"></input><br>Password:
+<input type="password" id="pwd"></input><br>
+<button type="button" onclick="sign()">Sign In</button>
+<h2>Create Account </h2> 
+Username:<input id="usrA"></input><br>
+Email:<input id="emailA"></input><br>
+Password:<input type="password" id="pwdA"></input><br>
+<button type="button" onclick="create()">Create Account</button>
+<h2> Forgot Password? TBD</h2>
+
+<script>
+function create() {
+  var usr = document.getElementById("usrA").value;
+  var ema = document.getElementById("emailA").value;
+  var pwd = document.getElementById("pwdA").value;
+  var values = {Key: Math.floor(100000000000000 + Math.random() * 900000000000000), Username: usr, Email: ema,  Password:pwd};
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "registration", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(JSON.stringify(values));
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if(this.responseText == "1") {
+        localStorage.setItem("key", values.Key);
+        localStorage.setItem("User", ema);
+        localStorage.setItem("Pass", pwd);
+        window.location.href = "portal";
+      }
+    } 
+  }; 
+}
+function sign() {
+  var unknown = document.getElementById("usr").value;
+  var pwd = document.getElementById("pwd").value;
+  var values = {Unknown: unknown,  Password:pwd};
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "check", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(JSON.stringify(values));
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if(this.responseText == "false") {
+        alert("Login Failure");
+      } else {
+        localStorage.setItem("key", this.responseText);
+        localStorage.setItem("User", unknown);
+        localStorage.setItem("Pass", pwd);
+        window.location.href = "portal";
+      }
+    } 
+  }; 
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+    "chinese": {
+        "termPhotography": "摄影",
+        "keyWords": "清晰•远程•著名",
+		"navContentA": "欢迎",
+		"navContentB": "投资组合",
+		"navContentC": "储备",
+		"navContentD": "定价",
+		"navContentE": "联系"
+    },
+    "spanish": {
+        "termPhotography": "fotografía",
+        "keyWords": "AFILADO • REMOTO • FAMOSO",
+		"navContentA": "bienvenido",
+		"navContentB": "cartera",
+		"navContentC": "reserva",
+		"navContentD": "precios",
+		"navContentE": "contacto"
+    },
+	"french": {
+        "termPhotography": "La photographie",
+        "keyWords": "SHARP • TÉLÉCOMMANDE • CÉLÈBRE",
+		"navContentA": "bienvenue",
+		"navContentB": "portfolio",
+		"navContentC": "réserve",
+		"navContentD": "prix",
+		"navContentE": "contact"
+    },
+	"german": {
+        "termPhotography": "Fotografie",
+        "keyWords": "SCHARF • FERN • BERÜHMT",
+		"navContentA": "Willkommen",
+		"navContentB": "Portfolio",
+		"navContentC": "Reserve",
+		"navContentD": "Preisgestaltung",
+		"navContentE": "Kontakt"
+    },
+	"english": {
+        "termPhotography": "Photography",
+        "keyWords": "SHARP • REMOTE • FAMOUS",
+		"navContentA": "welcome",
+		"navContentB": "portfolio",
+		"navContentC": "reserve",
+		"navContentD": "pricing",
+		"navContentE": "contact"
+    }
+}
