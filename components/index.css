@@ -287,9 +287,10 @@ header nav h2 {
   font-family: "Overpass Mono", monospace !important;
 }
 header nav h2 #logo {
-  color: lightgray;
+  color: #707070;
   text-transform: uppercase;
-  border-bottom: solid 2px lightgray;
+  border-bottom: solid 2px #707070;
+  left:-5px;
 }
 header nav .nav-button {
   color: #c0c0c0;
@@ -325,7 +326,7 @@ header nav div ul .exit-menu {
   position: absolute;
   top: 15px;
   right: 15px;
-  color: lightgray;
+  color: #707070;
   font-size: 20px;
   padding: 10px;
 }
@@ -335,7 +336,7 @@ header nav div ul li {
 }
 header nav div ul li a {
   display: block;
-  color: lightgray;
+  color: #707070;
   padding: 15px 5px;
   -webkit-transition: all .4s;
   transition: all .4s;
@@ -666,7 +667,7 @@ footer .copyright span {
     padding: 5px 0 !important;
   }
   nav div ul .active {
-    border-bottom: solid 1px lightgray;
+    border-bottom: solid 1px #707070;
   }
 
   .add-padding {
