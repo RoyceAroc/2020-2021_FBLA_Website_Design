@@ -6,7 +6,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/trailofbits/tubertc.git"
+        "url": "https://github.com/RoyceAroc/2020-2021_FBLA_Website_Design"
     },
     "keywords": [
         "node",
@@ -18,7 +18,7 @@
         "express": "*",
         "handlebars": "*",
         "nconf": "*",
-        "open-easyrtc": "^2.0.1",
+        "open-easyrtc": "*",
         "socket.io": "*",
         "tedious": "^9.2.1"
     },
