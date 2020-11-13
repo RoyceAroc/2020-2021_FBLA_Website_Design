@@ -1,4 +1,10 @@
 # Chris Photography
 Entry for FBLA Website Design RLC | By: Royce A., Chittebbayi P., and Surya S.
 
-Website deployed at [https://chrisphotography.roydero.com]d
+### Deployment 
+Website deployed [chrisphotography.roydero.com](https://chrisphotography.roydero.com)
+### Guidelines
+If you are running this file on localhost, make sure to have the following packages ready: handlebars, jsdoc, nconf, open-easyrtc, socket.io, and tedious. 
+```
+npm start
+```
