@@ -15,11 +15,12 @@
         "video"
     ],
     "dependencies": {
-        "open-easyrtc": "*",
         "express": "*",
+        "handlebars": "*",
         "nconf": "*",
+        "open-easyrtc": "^2.0.1",
         "socket.io": "*",
-        "handlebars": "*"
+        "tedious": "^9.2.1"
     },
     "devDependencies": {
         "jsdoc": "^3.6.3"
