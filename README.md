@@ -1,5 +1,5 @@
 # Chris Photography
-Entry for FBLA Website Design RLC | By: Royce A., Chittebbayi P., and Surya S.
+Entry for FBLA Website Design RLC | By: Royce, Chittebbayi, and Surya
 
 ### Deployment 
 Website deployed [chrisphotography.roydero.com](https://chrisphotography.roydero.com)
