@@ -190,9 +190,7 @@ ul {
 */
 header {
 
-  min-height: 100vh;
-   
-  //background-size: cover;
+  max-height: 100vh;
   background-size: 100% 100%;
   background-attachment: fixed;
   display: -webkit-box;
@@ -210,13 +208,70 @@ header {
 .inheader{
   display: flex;
   flex-direction:row;
+  height: 90vh;
 }
+@media only screen and (orientation:landscape){
 .headertext{
   width:50%;
+  padding-left:10px;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.headertext > h1 {
+  font-family: sans-serif;
+  font-size: 6vw;
+  margin:0;
+}
+.headertext > h4{
+  color: #707070;
+  font-weight:0;
+}
+.headertext > button{
+  color: white;
+  padding: 5px;
+  background-color:  #be8040;
+
+  width:20%;
 }
 .galleryimg{
   width:50%;
-  height:100%;
+}
+.galleryimg > img{
+  width:100%;
+  height: 100%;
+}
+}
+@media only screen and (orientation:portrait){
+  .headertext{
+    width:99%;
+    padding-left:1%;;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+  }
+  .headertext > h1 {
+    font-family: sans-serif;
+    font-size: 10vw;
+    margin:0;
+  }
+  .headertext > h4{
+    color: #707070;
+    font-weight:0;
+  }
+  .headertext > button{
+    color: white;
+    padding: 5px;
+    background-color:  #be8040;
+  
+    width:100%;
+  }
+  .galleryimg{
+    display:none;
+  }
+  .galleryimg > img{
+    display:none;
+  }
 }
 header nav {
   padding: 15px 35px;
