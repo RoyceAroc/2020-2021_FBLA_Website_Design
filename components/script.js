@@ -151,3 +151,18 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 
 
 
+if(document.getElementsByClassName("column")) {
+  
+var elements = document.getElementsByClassName("column");
+
+four();
+
+}
+function four() {
+  var i;
+  
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "25%";  // IE10
+      elements[i].style.flex = "25%";
+    }
+  }

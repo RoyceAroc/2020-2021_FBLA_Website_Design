@@ -94,7 +94,13 @@ tubertcApp.get("/reserve", (req, res) => {
     return res.end();
   });
 });
-
+tubertcApp.get("/pricing", (req, res) => {
+  fs.readFile('files/pricing.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+});
 tubertcApp.get("/contact", (req, res) => {
   fs.readFile('files/contact.html', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
