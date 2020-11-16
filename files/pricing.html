@@ -4,13 +4,44 @@
     <title> Portfolio | Chris Photography </title>
     <link rel="icon" type="image/png" href="graphics/images/icon.png">
     <link href="components/files.css" rel="stylesheet" type="text/css">
-    <link href="components/pricing.css" rel="stylesheet" type="text/css">
+    <link href="../components/pricing.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <link rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!--TEMPORARY CSS. WILL MOVE LATER ON-->
+    <style type="text/css">
+    .article{
+      display:flex;
+      flex-direction:column;
+      background-color:rgb(231, 231, 231);
+  }
+  @media only screen and (orientation:landscape){
+  .article > .row{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+  }
+  @media only screen and (orientation:portrait){
+  .row{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+  }
+  }
+    .article > .row > div{
+      background-color:white;
+      margin: 10px;
+      padding: 25px;
+      width: 20vw;
+      border-top: 7px solid rgb(13, 150, 13);
+    }
+
+
+    </style>
   </head>
 <body>
 <header>
