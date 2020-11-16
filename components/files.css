@@ -606,12 +606,14 @@ footer .copyright span {
   .navigation > ul > .listheading{
     background-color:#966535 !important;
     font-size: 130%;
+    cursor: auto;
   }
   .navigation > ul > li{
     color: white;
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
+    cursor:pointer;
   }
   .navigation > ul > .lastlistelement{
     border-bottom: none !important;

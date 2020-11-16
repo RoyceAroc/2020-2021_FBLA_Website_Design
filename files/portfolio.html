@@ -38,44 +38,54 @@
       <li class="listheading">
         Themes
       </li>
-      <li class="listelement">
+      <li class="listelement" onclick = "changecontent('classic')">
         Classic
       </li>
-      <li class="listelement">
+      <li class="listelement"  onclick = "changecontent('outdoor')">
         Outdoor
       </li>
-      <li class="listelement">
+      <li class="listelement" onclick = "changecontent('cultural')">
         Cultural
       </li>
-      <li class="listelement lastlistelement">
+      <li class="listelement" onclick = "changecontent('destination')">
         Destination
       </li>
-      <li class="listelement lastlistelement">
+      <li class="listelement lastlistelement"  onclick = "changecontent('miscellaneous')">
         Miscellaneous
       </li>
     </ul>
   </section>
   <script>
+    var contentsarray = [document.getElementById('classic'),document.getElementById('outdoor'),document.getElementById('cultural'),document.getElementById('destination'),document.getElementById('miscellaneous'),]
+    function changecontent(x){
+      document.getElementById('classic').style.display = "none";
+      document.getElementById('outdoor').style.display = "none";
+      document.getElementById('cultural').style.display = "none";
+      document.getElementById('destination').style.display = "none";
+      document.getElementById('miscellaneous').style.display = "none";
+
+      document.getElementById(x).style.display = "block";
+    }
   </script>
   <section class="content">
-    <div class="classic">
+    <div class="classic" id="classic">
       <img src="files/graphics/classic/classic1.jpg">
       <img src="files/graphics/classic/classic2.jpg">
       <img src="files/graphics/classic/classic3.jpg">
       <img src="files/graphics/classic/classic4.jpg">
       <img src="files/graphics/classic/classic5.jpg">
     </div>
-    <div class="outdoor" style="display:none;">
+    <div class="outdoor" id="outdoor"style="display:none;">
       <img src="files/graphics/outdoor/outdoor1.jpg">
       
     </div>
-    <div class="culture">
+    <div class="culture" id="cultural" style="display:none;">
 
     </div>
-    <div class="destination">
+    <div class="destination" id="destination"style="display:none;">
 
     </div>
-    <div class="miscellaneous">
+    <div class="miscellaneous" id="miscellaneous"style="display:none;">
 
     </div>
   </section>
