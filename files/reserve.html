@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+
+  <title>Calendar Testing</title>
+  
+  
+  <link rel='stylesheet' href='https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.css'>
+  
+<style>
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+#calendarContainer,
+#organizerContainer {
+  float: left;
+  margin: 5px;
+}
+</style>
+
+
+
+
+</head>
+
+<body >
+  <div id="calendarContainer"></div>
+<div id="organizerContainer"></div>
+
+  <script src='https://cdn.rawgit.com/nizarmah/calendar-javascript-lib/master/calendarorganizer.min.js'></script>
+  
+      <script id="rendered-js" >
+"use strict";
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+// function that creates dummy data for demonstration
+function createDummyData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "calendarbookings", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("data_init");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      var date = new Date();
+      var data = {};
+      //goals: http request db -> get value -> configure value -> add it to the nested loop -> done -> 
+      // client add to db program
+      for (var i = 0; i < 10; i++) {
+        data[date.getFullYear() + i] = {};
+        for (var j = date.getMonth(); j < 12; j++) {
+          data[date.getFullYear() + i][j + 1] = {};
+          for(var days=date.getDate(); days<daysInMonth(j+1,date.getFullYear()); days++) {
+            console.log(daysInMonth(j+1,date.getFullYear()));
+          }
+        }
+      }
+      try {   
+        data[2020][11][2].push({
+        startTime: "10:00",
+        endTime: "12:00",
+        text: "Some Event Here" });
+      } catch (e) {
+        data[2020][11][2] = [];
+        data[2020][11][2].push({
+        startTime: "10:00",
+        endTime: "12:00",
+        text: "Some Event Here" });
+      }
+      return data;
+    } 
+  }; 
+}
+
+// creating the dummy static data
+var data = createDummyData();
+
+// initializing a new calendar object, that will use an html container to create itself
+var calendar = new Calendar(
+"calendarContainer", // id of html container for calendar
+"small", // size of calendar, can be small | medium | large
+[
+"Wednesday", // left most day of calendar labels
+3 // maximum length of the calendar labels
+],
+[
+"#E91E63", // primary color
+"#C2185B", // primary dark color
+"#FFFFFF", // text color
+"#F8BBD0" // text dark color
+]);
+
+
+// initializing a new organizer object, that will use an html container to create itself
+var organizer = new Organizer(
+"organizerContainer", // id of html container for calendar
+calendar, // defining the calendar that the organizer is related to
+data // giving the organizer the static data that should be displayed
+);
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 

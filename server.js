@@ -16,7 +16,6 @@ var webServer = null;
 var fs = require('fs');
 var tubertcApp = express();
 
-
 const config = {
   authentication: {
     options: {
@@ -81,6 +80,27 @@ tubertcApp.get("/portfolio", (req, res) => {
     return res.end();
   });
 });
+tubertcApp.get("/about", (req, res) => {
+  fs.readFile('files/about.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+});
+tubertcApp.get("/reserve", (req, res) => {
+  fs.readFile('files/reserve.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+});
+tubertcApp.get("/pricing", (req, res) => {
+  fs.readFile('files/pricing.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+});
 tubertcApp.get("/contact", (req, res) => {
   fs.readFile('files/contact.html', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -98,6 +118,9 @@ tubertcApp.get('/components/files.css',function(req,res){
 });
 tubertcApp.get('/components/contact.css',function(req,res){
   res.sendFile(path.join(__dirname + '/components/contact.css')); 
+});
+tubertcApp.get('/components/central.css',function(req,res){
+  res.sendFile(path.join(__dirname + '/components/central.css')); 
 });
 tubertcApp.get('/components/all.css',function(req,res){
   res.sendFile(path.join(__dirname + '/components/all.css')); 
@@ -319,11 +342,11 @@ tubertcApp.post('/registration', function (req, res) {
     });
       var arr = [];
       var objectData = new Object();
-      tubertcApp.post('/project/edit/getInterfaceData', function (req, res) {
+      tubertcApp.post('/calendarbookings', function (req, res) {
         /* We left off here on the registration phase*/
           req.on('data', function(data) {
             const requestB = new Request(
-              `SELECT * FROM ` + data + ` ;`,
+              `SELECT * FROM bookacall;`,
               (err, result) => {
                 if (err) {
                   console.error(err.message);
@@ -337,10 +360,8 @@ tubertcApp.post('/registration', function (req, res) {
               });
             });
             requestB.on('doneProc', result => {
-              for(i=0; i<arr.length; i+=2) {
-                objectData[arr[i]] = arr[i+1];
-              }
-              res.send(objectData);
+              res.send(arr);
+              arr = [];
             });
            connection.execSql(requestB);
           })

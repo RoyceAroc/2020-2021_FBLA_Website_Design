@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 768px) {
   .user {
     position: absolute; 
@@ -318,3 +319,34 @@ input[type=text]:placeholder,input[type=email]:placeholder, input[type=password]
   width: 100%;
 }
 
+.fa-facebook {
+
+  background:white;
+  color:#232323;
+  padding: 18px;
+    
+  border-radius: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 5px;
+}
+
+.fa-twitter {
+  background: white;
+  color:  #232323;
+  padding: 18px;
+    
+  border-radius: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 5px;
+}
+.fa-instagram {
+  background: white;
+  color: #232323;   padding: 18px;
+    
+  border-radius: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 5px;
+}
