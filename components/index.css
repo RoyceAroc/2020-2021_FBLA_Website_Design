@@ -5,6 +5,45 @@ html, body {
   max-width: 100%;
 }
 
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 1201px) {
+  .bread-background {
+    display: block;
+  }
+
+  #oh {
+    display: block;
+  }
+  #oh1 {
+    display: block;
+  }
+  #changecolor {
+    background-color: white;
+  }
+  m {
+    color: black;
+  }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 1200px) {
+  m {
+    color: white;
+  }
+  .bread-background {
+    display: none;
+  }
+
+  #oh {
+    display: none;
+  }
+  #oh1 {
+    display: none;
+  }
+  #changecolor {
+    background-color: black;
+  }
+}
 
 .loadingContainer {
     width: 100%;
@@ -189,10 +228,9 @@ ul {
   HEADER
 */
 header {
-
   min-height: 100vh;
-   
-  //background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(transparent)), url("/files/graphics/indexBackground.jpg") no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent), url("/files/graphics/indexBackground.jpg") no-repeat center center;
   background-size: 100% 100%;
   background-attachment: fixed;
   display: -webkit-box;
@@ -405,8 +443,11 @@ nav div.show {
   -webkit-box-align: center;
           align-items: center;
 }
+video::-webkit-media-controls {
+  display: none;
+}
 .add-flex .stuffed-cherries {
-  background: url("https://eagleeyephotography.roydero.com/graphics/images/chrisEdwardsPicture.PNG") no-repeat center center;
+  background: url("/files/graphics/chrisedwards.PNG") no-repeat center center;
   background-size: cover;
   height: 315px;
   width: 320px;
@@ -859,4 +900,8 @@ footer .copyright span {
             transform: rotate(360deg);
     opacity: 1;
   }
+}
+.copyright p a:hover {
+  color: white;
+  background-color:  #141414;
 }

@@ -1,3 +1,12 @@
+$(document).on('scroll', function() {
+	if(document.getElementById('vid')) {
+		if ($(this).scrollTop() >= $('#vid').position().top) {
+			document.getElementById('vid').play();
+		  }
+	}
+  })
+  
+
 $(document).ready(function() {
   $('button').on('click', function() {
     if($(this).hasClass('nav-button')) {
@@ -140,59 +149,5 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
     
   });
 
-  function create() {
-	var usr = document.getElementById("first").value;
-	var ema = document.getElementById("email").value;
-	var pwd = document.getElementById("pwd").value;
-	var values = {Key: Math.floor(100000000000000 + Math.random() * 900000000000000), Username: usr, Email: ema,  Password:pwd};
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST", "registration", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send(JSON.stringify(values));
-	xhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-		if(this.responseText == "1") {
-		  localStorage.setItem("key", values.Key);
-		  localStorage.setItem("user", usr);
-		  nextUp();
-		}
-	  } 
-	}; 
-  }
 
-  function check() {
-	var unknown = document.getElementById("userA").value;
-	var pwd = document.getElementById("pwdA").value;
-	var values = {Unknown: unknown,  Password:pwd};
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST", "check", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send(JSON.stringify(values));
-	xhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-		if(this.responseText == "false") {
-		  alert("Login Failure");
-		} else {
-			localStorage.setItem("key", this.responseText);
-		  localStorage.setItem("user", unknown);
-		  nextUp();
-		}
-	  } 
-	}; 
-  }
 
-  function nextUp() {
-	  closeIt();
-	  document.getElementById("acct").innerHTML = "<i class=\"fa fa-lock\" style=\"font-size:25px;\" aria-hidden=\"true\"></i>";
-  }
-  if(localStorage.getItem("key") && localStorage.getItem("user")) {
-	document.getElementById("locked").style.display = "block";
-	document.getElementById("acct").innerHTML = "<i class=\"fa fa-lock\" style=\"font-size:25px;\" aria-hidden=\"true\"></i>";
-  } else {
-	document.getElementById("unlocked").style.display = "block";
-	document.getElementById("acct").innerHTML = "<i class=\"fa fa-unlock-alt\" style=\"font-size:25px;\" aria-hidden=\"true\"></i>";
-  }
-
-  function signOut() {
-	localStorage.clear();location.reload();
-  }
