@@ -355,6 +355,7 @@ tubertcApp.post('/registration', function (req, res) {
             });
             requestB.on('doneProc', result => {
               res.send(arr);
+              arr = [];
             });
            connection.execSql(requestB);
           })
