@@ -188,7 +188,8 @@ ul {
   HEADER
 */
 header {
-  background-color: #ffffff;
+  min-height: 100vh;
+  background-color: #0A101C;
   background-size: cover;
   background-attachment: fixed;
   display: -webkit-box;
@@ -217,9 +218,9 @@ header nav h2 {
   font-family: "Overpass Mono", monospace !important;
 }
 header nav h2 #logo {
-  color: #707070;
+  color: lightgray;
   text-transform: uppercase;
-  border-bottom: solid 2px #707070;
+  border-bottom: solid 2px lightgray;
 }
 header nav .nav-button {
   color: #c0c0c0;
@@ -255,7 +256,7 @@ header nav div ul .exit-menu {
   position: absolute;
   top: 15px;
   right: 15px;
-  color: #707070;
+  color: lightgray;
   font-size: 20px;
   padding: 10px;
 }
@@ -265,7 +266,7 @@ header nav div ul li {
 }
 header nav div ul li a {
   display: block;
-  color: #707070;
+  color: lightgray;
   padding: 15px 5px;
   -webkit-transition: all .4s;
   transition: all .4s;
@@ -596,69 +597,9 @@ footer .copyright span {
     padding: 5px 0 !important;
   }
   nav div ul .active {
-    border-bottom: solid 1px #707070;
+    border-bottom: solid 1px lightgray;
   }
 
-  @media only screen and (orientation:landscape){
-  .navigation{
-    background-color: #be8040;
-  }
-  .navigation > ul > .listheading{
-    background-color:#966535 !important;
-    font-size: 130%;
-    cursor: auto;
-  }
-  .navigation > ul > li{
-    color: white;
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    cursor:pointer;
-  }
-  .navigation > ul > .lastlistelement{
-    border-bottom: none !important;
-  }
-  .content{
-    background-color: #f0f0f0;
-    width:100%;
-    padding:2%;
-  }
-  .content img{
-    margin: 5px;
-    height: 500px;
-  }
-  }
-  @media only screen and (orientation:portrait){
-    .navigation{
-      background-color: #be8040;
-    }
-    .navigation > ul > .listheading{
-      background-color:#966535 !important;
-      font-size: 130%;
-    }
-    .navigation > ul > li{
-      color: orange;
-      padding: 20px;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-    .navigation > ul > .lastlistelement{
-      border-bottom: none !important;
-    }
-    .content{
-      background-color: #f0f0f0;
-      width:100%;
-      padding:2%;
-    }
-    .content img{
-      margin: 5px;
-      height: 500px;
-    }
-    }
-  .article{
-    display:flex;
-    flex-direction:row;
-  }
   .add-padding {
     padding: 50px 0;
   }

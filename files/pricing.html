@@ -1,47 +1,212 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8"></meta>
-    <title> Portfolio | Chris Photography </title>
-    <link rel="icon" type="image/png" href="graphics/images/icon.png">
+    <title> Pricing | Chris Photography </title>
+    <link rel="icon" type="image/png" href="/files/graphics/favicon.png">
     <link href="components/files.css" rel="stylesheet" type="text/css">
-    <link href="../components/pricing.css" rel="stylesheet" type="text/css">
+    <link href="components/central.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <link rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-
-    <!--TEMPORARY CSS. WILL MOVE LATER ON-->
-    <style type="text/css">
-    .article{
-      display:flex;
-      flex-direction:column;
-      background-color:rgb(231, 231, 231);
+    <style>
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Montserrat Light'), local('Montserrat-Light'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_cJD3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+body:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 350px;
+  background-color: rgba(210, 156, 72, 0.14);
+}
+.package-pricing-container {
+  padding: 20px 0 100px 0;
+}
+.package-pricing-container .package-columns-flex-container {
+  background-color: #fff;
+}
+.package-pricing-container .package-tabs ul.tabs {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 30px 0 0 0;
+  margin: 0;
+}
+.package-pricing-container .package-tabs ul.tabs li {
+  cursor: pointer;
+  display: inline-block;
+  list-style-type: none;
+  padding: 15px 30px;
+  border-radius: 4px 4px 0 0;
+  color: #545454;
+  font-weight: 500;
+  margin: 0 -1px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+.package-pricing-container .package-tabs ul.tabs li.active-package-tab {
+  background-color: #fff;
+  z-index: 9;
+  box-shadow: 9px -7px 20px -2px rgba(0, 0, 0, 0.02);
+}
+.package-pricing-container .package-tabs ul.tabs li:nth-child(2).active-package-tab {
+  box-shadow: -9px -7px 20px -2px rgba(0, 0, 0, 0.02);
+}
+.package-pricing-container .pricing-col {
+  padding: 30px 0;
+  border-bottom: 5px solid rgba(210, 156, 72, 0.14);
+}
+.package-pricing-container .package-level {
+  padding: 0 20px;
+}
+.package-pricing-container .package-header {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 45px 0 30px 0;
+}
+.package-pricing-container .package-header .price-icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 2px dotted #d29c48;
+  margin: 0 auto 30px auto;
+}
+.package-pricing-container .package-header h4 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 10px 0;
+  color: #545454;
+}
+.package-pricing-container .package-header h3 {
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+  margin: 15px 0 35px 0;
+  color: #545454;
+}
+.package-pricing-container .package-header button.package-cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  display: block;
+  color: #545454;
+  background-color: #fff;
+  background: none;
+  margin: 0 auto;
+  border: 1px solid #d29c48;
+  padding: 10px 40px;
+  outline: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.package-pricing-container .package-header button.package-cta:hover {
+  background-color: #d29c48;
+  color: #fff;
+}
+.package-pricing-container .package-includes {
+  padding: 30px 0;
+}
+.package-pricing-container .package-includes ul {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+.package-pricing-container .package-includes ul li {
+  line-height: 25px;
+  margin: 25px 0 0 0;
+  padding-left: 25px;
+  color: #8d8d8d;
+  list-style-type: none;
+  position: relative;
+  font-size: 14px;
+}
+.package-pricing-container .package-includes ul li:before {
+  content: "•";
+  font-size: 50px;
+  line-height: 15px;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  color: #d29c48;
+}
+@media screen and (min-width: 800px) {
+  .package-pricing-container .package-columns-flex-container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.06);
   }
-  @media only screen and (orientation:landscape){
-  .article > .row{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
+  .package-pricing-container .package-columns-flex-container .pricing-col {
+    margin-top: 40px;
+    position: relative;
+    border: none;
+    -webkit-box-flex: 1;
+            flex: auto;
   }
-  @media only screen and (orientation:portrait){
-  .row{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
+  .package-pricing-container .package-columns-flex-container .pricing-col .package-level {
+    padding: 0 30px;
   }
+  .package-pricing-container .package-columns-flex-container .pricing-col:nth-child(-n + 2):after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    right: 0;
+    height: 100%;
+    background-color: #E0E0E0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#E0E0E0));
+    background-image: linear-gradient(#fff, #E0E0E0);
   }
-    .article > .row > div{
-      background-color:white;
-      margin: 10px;
-      padding: 25px;
-      width: 20vw;
-      border-top: 7px solid rgb(13, 150, 13);
-    }
-
-
+}
     </style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
   </head>
 <body>
 <header>
@@ -53,59 +218,66 @@
       <ul>
         <button class="exit-menu fa fa-times"></button>
         <li><a id="navContentA" href="/"></a></li>
-        <li><a id="navContentB" href="portfolio" class="active"></a></li>
+        <li><a id="navContentAA" href="about" ></a></li>
+        <li><a id="navContentB" href="portfolio" ></a></li>
         <li><a id="navContentC" href="reserve"></a></li>
-        <li><a id="navContentD" href="pricing"></a></li>
+        <li><a id="navContentD" href="pricing" class="active"></a></li>
         <li><a id="navContentE" href="contact"></a></li>
       </ul>
 <!--     </ul> -->
     </div>
   </nav>
-  
-  <!--We were gonna remove the anim $(this).removeClass("run-animation").addClass("run-animation");-->
-</header>
-<article class="article">
-    <section class="row">
-        <div>
-            <h4>Wallet Size</h4>
-            <p>16 copies</p>
-            <p>Dimensions: 2.5 inches by 3.5 inches</p>
-            <p>Price: 5 dollars</p>
-        </div>
-        <div>
-            <h4>Card Size</h4>
-            <p>6 copies</p>
-            <p>Dimensions: 6 inches inches by 4.5 inches</p>
-            <p>Price: 7 dollars</p>
-        </div>
-        <div>
-            <h4>Custom Size</h4>
-            <p>Copies and dimensions are up to preference</p>
-            <p>Price: Varies</p>
-        </div>
-    </section>
-    <section class="row">
-        <div>
-            <h4>Small Framable Size</h4>
-            <p>2 copies</p>
-            <p>Dimensions: 12 inches by 15 inches</p>
-            <p>Price: 8 dollars</p>
-        </div>
-        <div>
-            <h4>Medium Framable Size</h4>
-            <p>1 copies</p>
-            <p>Dimensions: 16 inches by 20 inches</p>
-            <p>Price: 10 dollars</p>
-        </div>
-        <div>
-            <h4>Large Framable Size</h4>
-            <p>1 copies</p>
-            <p>Dimensions: 20 inches by 24 inches</p>
-            <p>Price: 11 dollars</p>
-        </div>
-    </section>
-</article>
 
+  <div class="package-pricing-container">
+    <div class="package-tabs">
+      <ul class="tabs">
+        <li class="active-package-tab" id="couples">Frames</li>
+        <li id="portraits">Magnets</li>
+      </ul>
+    </div>
+    <div class="package-columns-flex-container">
+      <div class="pricing-col" id="package01">
+        <div class="package-level">
+          <div class="package-header">
+            <div style="background-color: pink;" class="price-icon"></div>
+            <h4 class="package-name">5" x 12"</h4>
+            <h3 class="package-price" id="package-1-price"> </h3>
+            <button class="package-cta">Get Started</button>
+          </div>
+          <div class="package-includes">
+            <ul id="package-1-includes"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-col" id="package02">
+        <div class="package-level">
+          <div class="package-header">
+            <div style="background-color: orange;"  class="price-icon"></div>
+            <h4 class="package-name">10" x 13"</h4>
+            <h3 class="package-price" id="package-2-price"> </h3>
+            <button class="package-cta">Get Started</button>
+          </div>
+          <div class="package-includes">
+            <ul id="package-2-includes"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-col" id="package03">
+        <div class="package-level">
+          <div class="package-header">
+            <div style="background-color: lightblue;"  class="price-icon"></div>
+            <h4 class="package-name">15" x 20"</h4>
+            <h3 class="package-price" id="package-3-price"> </h3>
+            <button class="package-cta">Get Started</button>
+          </div>
+          <div class="package-includes">
+            <ul id="package-3-includes"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <footer>
   <button class="to-top"><i class="fa fa-chevron-up"></i>TOP</button>
@@ -115,10 +287,10 @@
     <div class="locations">
       <h4>ADDRESS</h4>
       <div class="location-1">
-        <h5>315 Van Brun St<br />Brooklyn, NY &#8212; 11231</h5>
+        <h5>315 Avonleigh Drive <br />Cumming, GA &#8212; 30041</h5>
       </div><!--location-1-->
       <div class="location-2">
-        <h5>25 Union Square West<br />New York, NY &#8212; 10003</h5>
+        <h5>2545 North Atlanta St<br />Atlanta, GA &#8212; 10003</h5>
       </div>
     </div><!--locations end-->
 
@@ -148,11 +320,182 @@
   
   <div class="copyright">
     <p><small>Copyright 2020 &#169; Handcrafted with love by <span>SFHS Website Design</span> Team</small></p>
-    <p><small>Permissions and Copyright &#8226; Contact The Team</small></p>
+    <p><a href="https://www.facebook.com/profile.php?id=100057838924184" class="fa fa-facebook"></a><a href="https://twitter.com/ChrisPhotograp8" class="fa fa-twitter"></a><a href="https://www.instagram.com/chrisedwards.py/?hl=en" class="fa fa-instagram"></a></p>
   </div>
 </footer>
 
 <script src="/components/script.js"></script>
+<script>
+  // Pricing Data
+  let packageData = {
+    // Portraits
+    portraitPrice: [
+    "$50",
+    "$75",
+    "$150"],
+  
+    portraitPackage01Includes: [
+    "10x",
+    "Sticky magnet",
+    "Animation effects not included"],
+  
+    portraitPackage02Includes: [
+    "20x",
+    "Sticky magnet",
+    "Animation effects not included"],
+  
+    portraitPackage03Includes: [
+    "50x",
+    "Sticky magnet",
+    "Animation effects not included"],
+  
+    // Couples
+    couplePrice: [
+    "$95",
+    "$180",
+    "$400"],
+  
+    couplePackage01Includes: [
+    "100x",
+    "Black photo framed polish",
+    "Animation effects not included"],
+  
+    couplePackage02Includes: [
+    "200x",
+    "Black photo framed polish",
+    "Animation effects included"],
+  
+    couplePackage03Includes: [
+    "500x",
+    "Black photo framed polish",
+    "Animation effects included"] };
+  
+  
+  
+  $('#couples').addClass('active-package-tab');
+  
+  if ($('#couples').hasClass('active-package-tab')) {
+    $('#portraits').removeClass('active-package-tab');
+    $(this).addClass('active-package-tab');
+  
+    // Update Prices
+    document.getElementById("package-1-price").innerHTML = packageData.couplePrice[0];
+    document.getElementById("package-2-price").innerHTML = packageData.couplePrice[1];
+    document.getElementById("package-3-price").innerHTML = packageData.couplePrice[2];
+  
+    // Update and Loop Includes for package 1
+    text = "<ul>";
+    packageData.couplePackage01Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-1-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 2
+    text = "<ul>";
+    packageData.couplePackage02Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-2-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 3
+    text = "<ul>";
+    packageData.couplePackage03Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-3-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  }
+  
+  $('#portraits').click(function () {
+    $('#couples').removeClass('active-package-tab');
+    $(this).addClass('active-package-tab');
+  
+    // Update Prices
+    document.getElementById("package-1-price").innerHTML = packageData.portraitPrice[0];
+    document.getElementById("package-2-price").innerHTML = packageData.portraitPrice[1];
+    document.getElementById("package-3-price").innerHTML = packageData.portraitPrice[2];
+  
+    // Update and Loop Includes for package 1
+    text = "<ul>";
+    packageData.portraitPackage01Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-1-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 2
+    text = "<ul>";
+    packageData.portraitPackage02Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-2-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 3
+    text = "<ul>";
+    packageData.portraitPackage03Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-3-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  });
+  $('.package-cta').click(function () {
+    window.location.href = "reserve";
+  });
+  $('#couples').click(function () {
+    $('#portraits').removeClass('active-package-tab');
+    $(this).addClass('active-package-tab');
+  
+    // Update Prices
+    document.getElementById("package-1-price").innerHTML = packageData.couplePrice[0];
+    document.getElementById("package-2-price").innerHTML = packageData.couplePrice[1];
+    document.getElementById("package-3-price").innerHTML = packageData.couplePrice[2];
+  
+    // Update and Loop Includes for package 1
+    text = "<ul>";
+    packageData.couplePackage01Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-1-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 2
+    text = "<ul>";
+    packageData.couplePackage02Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-2-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  
+    // Update and Loop Includes for package 3
+    text = "<ul>";
+    packageData.couplePackage03Includes.forEach(showIncludes);
+    text += "</ul>";
+    document.getElementById("package-3-includes").innerHTML = text;
+  
+    function showIncludes(includes) {
+      text += "<li>" + includes + "</li>";
+    }
+  });
+  //# sourceURL=pen.js
+      </script>
 </body>
 </html>
-Pricing Info
